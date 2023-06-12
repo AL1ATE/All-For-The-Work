@@ -1,0 +1,18 @@
+/* Время */
+
+.time-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.time {
+    font-size: 72px;
+    display: flex;
+    align-items: center;
+}
+
+.time span {
+    margin: 0 10px;
+} 
