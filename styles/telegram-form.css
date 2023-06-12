@@ -1,0 +1,69 @@
+.telegram-container h2{
+    color: #fff;
+}
+.telegram-container {
+    max-width: 400px;
+    margin-left: 200px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .telegram-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .telegram-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .telegram-container input[type="text"]{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f5f5f5;
+    font: 1em sans-serif;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  .telegram-container textarea {
+    width: 100%;
+    height: 150px;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 150px;
+    max-height: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f5f5f5;
+    font: 1em sans-serif;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .telegram-container button[type="submit"] {
+    position: relative;
+    background-color: #0088cc;
+    color: #fff;
+    top: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .telegram-container button[type="submit"]:hover {
+    background-color: #006699;
+  }
+  
