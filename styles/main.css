@@ -1,0 +1,80 @@
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }    
+
+    h2{
+        text-align: center;
+    }
+
+    .main-text{
+        font-size: 26px;
+        color: #333;
+        width: 1300px;
+        margin-left: 375px;
+    }
+
+    /* Header */
+    
+    header {
+        height: 100px;
+        background-color: #333;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Сайдбар */
+    .sidebar {
+        width: 200px;
+        height: 100%;
+        background-color: #eee;
+        position: fixed;
+        top: 100px;
+        left: 0;
+    }
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    nav li {
+        padding: 10px;
+    }
+    
+    nav a {
+        display: block;
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+    }
+    
+    nav a:hover {
+        background-color: #ddd;
+    }
+    
+    nav a.active {
+        font-weight: bold;
+        background-color: #ddd;
+    }
+    
+    .tab-content {
+        display: none;
+        padding: 20px;
+    }
+    
+    .tab-content.active {
+        display: block;
+    }
+
+    .beta{
+        z-index: 9999;
+        position: absolute;
+        margin-left: 10px;
+        margin-top: 850px;
+    }
+      
