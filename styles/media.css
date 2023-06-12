@@ -1,0 +1,128 @@
+/* Media Queries  */
+
+/* Стили для разрешения 768px */
+@media screen and (max-width: 768px) {
+
+    .telegram-container {
+        max-width: 400px;
+        margin-left: 5px;
+      }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+    }    
+
+    #interval-for-timer{
+        margin-bottom: 50px;
+        margin-left: 375px;
+    }
+    .tab-content {
+        padding: 10px;
+    }
+
+    .timer-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .timer-error{
+        margin-left: 375px;
+        margin-top: 550px;
+    }    
+
+    .stopwatch-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .time-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .stop-button{
+        margin-bottom: 400px;
+    }
+    .start-button{
+        margin-bottom: 400px;
+    }
+    .stop-stopwatch{
+        margin-bottom: 400px;
+    }
+    .start-stopwatch{
+        margin-bottom: 400px;
+    }
+    .reset-stopwatch{
+        margin-bottom: 400px;
+    }
+    
+    .add-time{
+       margin-top: 625px;
+       margin-right: 150px;
+    }
+    .cut-time{
+        margin-top: 550px;
+        margin-right: 350px;
+     }
+     
+     
+}
+
+@media screen and (max-width: 600px) {
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        background-color: #eee;
+        position: static;
+    }
+    nav li {
+        border-top: 1px solid #ccc;
+    }
+    nav a {
+        font-size: 16px;
+    }
+
+    .timer-container {        
+        height: auto;
+    }
+    .timer {
+        font-size: 48px;
+    }
+
+    .stopwatch-container {
+        height: auto;
+    }
+    .stopwatch {
+        font-size: 48px;
+    }
+
+    .time-container {
+        height: auto;
+    }
+    .time {
+        font-size: 48px;
+    }
+}
+
+/* Styles for screens up to 576px  Ca*/
+@media only screen and (max-width: 576px) {
+    .calculator {
+      margin: 0;
+      width: 92%;
+    }
+    .buttons {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Styles for screens between 576px and 768px */
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    .calculator {
+      margin-left: 100px;
+      width: 320px;
+    }
+    .buttons {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
