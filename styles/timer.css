@@ -1,0 +1,300 @@
+/* Таймер */
+
+    .timer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+    }
+    
+    .timer {
+        font-size: 72px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .timer span {
+        margin: 0 10px;
+    }    
+    .timer-error{
+        position: absolute;
+        background-color: #646262;
+        width: 350px;
+        height: 50px;
+        margin-left: 1475px;
+        margin-top: 725px;
+        font-size: 18px;
+        border-radius: 5px;
+        display: none
+    }
+    .text-error-timer{
+        position: absolute;
+        color:#ffffff;
+        margin-top: 14px;
+        margin-left: 30px;
+    }
+    .img-in-button{
+        width: 40px;  
+        color: #525252;  
+        column-fill: #fff;    
+    }
+
+    input[type=number] {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        margin-right: 1rem;
+        width: 80px;
+        margin-left: 11px;
+      }
+      
+      input[type=number]:focus {
+        outline: none;
+        border-color: #66afe9;
+        box-shadow: 0 0 5px #66afe9;
+      }
+      
+      ::-webkit-inner-spin-button,
+      ::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      
+      input[type=number]::-webkit-inner-spin-button {
+        display: none;
+      }
+
+      .interval-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      
+      #interval-for-timer {
+        position: absolute;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        background-color: #f8f8f8;
+        color: #333;
+        cursor: pointer;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+        margin-top: 325px;
+        margin-right: 325px;
+        width: 300px;
+      }
+      
+      #interval-for-timer:hover {
+        background-color: #e6e6e6;
+      }
+      
+      #interval-for-timer option {
+        color: #333;
+        background-color: #f8f8f8;
+      }
+      
+      #interval-for-timer option:hover {
+        background-color: #e6e6e6;
+      }
+      
+    
+      
+    .time-to-timer{
+        position: absolute;
+        margin-top: 200px;        
+    }
+
+/* Кнопки для таймера */
+
+.start-timer {
+    height: 50px;
+    width: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    border: #ddd;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 150px;
+}
+
+.reset-timer{
+    height: 50px;
+    width: 100px;
+    margin: 0 auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    border: #ddd;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 275px;
+
+}
+.pause-timer{        
+    height: 50px;
+    width: 100px;
+    margin: 0 auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #e64b4b;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    border: #ddd;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 27px;
+}
+
+.play-timer{        
+    height: 50px;
+    width: 100px;
+    margin: 0 auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #54af64;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    border: #ddd;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 27px;      
+}
+
+.add-time{
+    cursor: pointer;
+    position: absolute;
+    margin-left:450px;
+    margin-bottom: 75px;
+    display: none;
+    
+}
+.cut-time{
+    cursor: pointer;
+    position: absolute;
+    margin-left:450px;
+    margin-top: 75px;
+    display: none;
+}
+
+/* Форма подтверждения */
+.confirmation-form{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* прозрачный серый фон */
+    z-index: 9999; /* установка высокого значения z-index, чтобы блок был поверх других элементов */        
+}
+.confirm-info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    width: 600px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #ccc;
+    z-index: 9999; /* установка высокого значения z-index, чтобы блок был поверх других элементов */
+  }
+  
+  .confirmation-form h2 {
+    margin-top: 40px;
+    font-size: 24px;
+    color: #333;
+  }
+  .confirmation-form h3 {
+    color: #333;
+  }
+  
+  .confirm-notification {
+    position: absolute;
+    margin-bottom: 0px;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    margin-left: 70px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .relax-button {
+    position: absolute;
+    margin-bottom: 0px;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    margin-left: 225px;
+    background-color: #e64b4b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+  }
+  .close-button-for-confirm{
+    position: absolute;
+    background-image: url(/img/close.png);
+    background-size: 40px;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    margin-left: 565px;
+    margin-top: -10px;
+    width: 40px;
+    height: 40px;
+    border: 0px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .countdown-timer {
+    text-align: center;
+  }
+  
+  .countdown-timer h3 {
+    margin-top: 0;
+    font-size: 16px;
+  }
+  
+  .countdown-timer span {
+    display: inline-block;
+    font-size: 48px;
+    font-weight: bold;
+    color: #007bff;
+    margin: 0 5px;
+  }
+
+  .h2-for-button-relax{
+    display: none;
+    color: #333;
+    top: 20px;
+  }
