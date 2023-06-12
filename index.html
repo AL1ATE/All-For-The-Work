@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AFTWork</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/stopwatch.css">
+  <link rel="stylesheet" href="./styles/time.css">
+  <link rel="stylesheet" href="./styles/timer.css">  
+  <link rel="stylesheet" href="./styles/telegram-form.css">
+  <link rel="stylesheet" href="./styles/calculate.css">
+  <link rel="stylesheet" href="./styles/media.css">
+  <link rel="stylesheet" href="./styles/translater.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/time.js"></script>
+  <script src="./js/timer.js"></script>
+  <script src="./js/stopwatch.js"></script>
+  <script src="./js/calculate.js"></script>
+  <script src="./js/telegram-form.js"></script>
+  <script src="./js/translater.js"></script>
+</head>
+<body>
+  <header>
+    <h1>AFTWork</h1>
+  </header>
+  <div class="container">
+    <div class="beta">Beta 1.0</div>
+    <nav class="sidebar">
+      <ul>
+        <li><a href="#" class="active" onclick="showTab(event, 'home')">Главная</a></li>
+        <li><a href="#" onclick="showTab(event, 'timer')">Таймер</a></li>
+        <li><a href="#" onclick="showTab(event, 'translater')">Переводчик</a></li>
+        <li><a href="#" onclick="showTab(event, 'calculator')">Калькулятор</a></li>          
+        <li><a href="#" onclick="showTab(event, 'stopwatch')">Секундомер</a></li>       
+        <li><a href="#" onclick="showTab(event, 'time')">Время</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div id="home" class="tab-content active container_for_div">
+        <div class="telegram-container">
+          <h2>Поддержка</h2>
+          <form>
+            <input type="text" placeholder="Введите ваше имя" id="telegram-name">
+            <input type="text" placeholder="Введите ваш телефон" id="telegram-phone">
+            <textarea  placeholder="Введите сообщение" id="telegram-message" oninput="autoExpand(this)"></textarea>
+            <button type="submit" class="send-telegram">Отправить</button>
+          </form>
+        </div>
+      </div>
+      <div id="stopwatch" class="tab-content">
+        <h2>Секундомер</h2>
+        <div class="stopwatch-container">          
+          <div class="stopwatch">
+            <span>00</span>
+            <span>:</span>
+            <span>00</span>
+            <span>:</span>
+            <span>00</span>
+          </div>
+          <button class="start-stopwatch">Старт</button>
+          <button class="stop-stopwatch">Стоп</button>
+          <button class="reset-stopwatch">Сброс</button>          
+        </div>
+      </div>      
+      <div id="timer" class="tab-content">      
+      <div class="confirmation-form">
+        <div class="confirm-info">
+          <input class="close-button-for-confirm" type="button" title="Закрыть">
+          <h2 class="h2-for-button">Подтвердите получение уведомления</h2>  
+          <h2 class="h2-for-button-relax">Можно продолжать работу</h2>          
+          <div class="countdown-timer">
+            <h3>Осталось времени:</h3>
+            <span class="minutes">10</span>
+            <span>:</span>
+            <span class="seconds">00</span>
+          </div>
+          <button class="confirm-notification">Подтвердить</button>
+          <button class="relax-button">Продолжить работу</button>
+        </div>
+      </div>
+      <div class="timer-error">
+        <span class="text-error-timer">* Вы не ввели значения в таймер *</span>
+      </div>
+        <h2>Таймер</h2>
+        <div class="timer-container">
+          <div class="time-to-timer">
+            <input type="number" id="hours" min="0" max="24" placeholder="часы">
+            <input type="number" id="minutes" min="0" max="59" placeholder="минуты">
+            <input type="number" id="seconds" min="0" max="59" placeholder="секунды">
+          </div>
+          <div class="timer">
+            <span>00</span>
+            <span>:</span>
+            <span>00</span>
+            <span>:</span>
+            <span>00</span>
+          </div>
+          <div class="interval-container">
+            <select id="interval-for-timer">
+              <option value="0">Не уведомлять</option>
+              <option value="6000">Каждые 6 секунд</option>
+              <option value="60000">Каждую минуту</option>
+              <option value="600000">Каждые 10 минут</option>
+              <option value="3600000">Каждый час</option>
+            </select>
+          </div>
+          <button class="start-timer">Запуск</button>
+          <button class="pause-timer">Пауза</button>
+          <button class="play-timer">Дальше</button>
+          <button class="reset-timer">Сброс</button>
+          <input type="image" src="/img/plus.png" title="Продлить время" class="add-time" width="50px">
+          <input type="image" src="/img/minus.png" title="Сократить время" class="cut-time" width="50px">
+        </div>
+      </div>
+      <div id="time" class="tab-content">
+        <h2>Московское Время</h2>
+        <div class="time-container">
+            <div class="time">
+                <span>00</span>
+                <span>:</span>
+                <span>00</span>
+                <span>:</span>
+                <span>00</span>
+            </div>
+        </div>
+      </div>
+      <div id="calculator" class="tab-content">
+        <div class="calculator">
+          <input type="text" class="display" readonly>
+          <div class="buttons">
+            <button class="operator buttons-calculator" value="+">+</button>
+            <button class="operator buttons-calculator" value="-">-</button>
+            <button class="operator buttons-calculator" value="*">&times;</button>
+            <button class="operator buttons-calculator" value="/">&divide;</button>
+            <button class="buttons-calculator" value="7">7</button>
+            <button class="buttons-calculator" value="8">8</button>
+            <button class="buttons-calculator" value="9">9</button>
+            <button class="buttons-calculator" id="clear" value="AC">AC</button>
+            <button class="buttons-calculator" value="4">4</button>
+            <button class="buttons-calculator" value="5">5</button>
+            <button class="buttons-calculator" value="6">6</button>
+            <button id="calculate" class="operator buttons-calculator" value="=">=</button>
+            <button class="buttons-calculator" value="1">1</button>
+            <button class="buttons-calculator" value="2">2</button>
+            <button class="buttons-calculator" value="3">3</button>             
+            <button class="operator buttons-calculator" value=".">.</button>           
+            <button class="buttons-calculator" value="0">0</button>        
+          </div>
+        </div>        
+      </div>
+      <div id="translater" class="tab-content">
+        <div class="translater">
+            <form class="form-for-translater">
+              <textarea class="input-text" id="inputText" placeholder="Ввести текст" oninput="autoExpand(this)"></textarea>
+              <div class="language-selector">
+                <button id="enToRuBtn" class="active">EN -> RU</button>
+                <button id="ruToEnBtn">RU -> EN</button>
+              </div>
+              <div class="output">
+                <p id="translationOutput"></p>
+              </div>
+                <button type="submit" class="translate-btn">Translate</button>
+            </form>            
+        </div>
+        <div class="some-text-about-translater">
+          <p>Переводчик поможет вам сделать важные заметки на другом языке</p>
+          <br>
+          <p><b>!Примечание!</b></p>
+          <p>В данный момент времени переводчик поможет перевести <b>НЕБОЛЬШИЕ ПРИЛОЖЕНИЯ!</b></p>
+          <p>Также доступен перевод с английского на русский и наоборот</p>
+        </div>
+      </div>
+    </main>
+  </div>  
+</body>
+</html>
